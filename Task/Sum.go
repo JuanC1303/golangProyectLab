@@ -45,6 +45,11 @@ func negative(x []int) int {
 
 func sum1(p int, x []int) int {
 	sum := 0
+
+	if len(x) == 0 {
+		return 0
+	}
+
 	for i := 0; i <= p; i++ {
 		if i > 0 && i < p {
 			sum += x[i] * 2
