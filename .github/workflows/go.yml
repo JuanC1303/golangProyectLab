@@ -12,10 +12,18 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
-    steps:
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windos-latest, macos-latest]
+        node: [12.x]
+    steps:     
     - uses: actions/checkout@v3
-
+    - name: Use node
+    - uses: actions/setup-node@1
+      with:
+        node-version: ${{matrix.node-version}}
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
