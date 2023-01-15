@@ -23,4 +23,4 @@ jobs:
     - name: Change directory
     - run: cd Task
     - name: test
-      run: go test
+    - run: go test
